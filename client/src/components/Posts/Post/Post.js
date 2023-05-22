@@ -211,9 +211,9 @@ const Post = ({ post, setCurrentId }) => {
         </Typography>
         <CardContent>
           <Typography
-            variant=""
+            variant="body1"
             color="textSecondary"
-            component="textarea"
+            // component="te"
             style={{
               whiteSpace: "pre-wrap",
               border: "none",
