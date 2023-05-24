@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
 import { Provider } from "react-redux";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -18,7 +18,7 @@ import { createUploadLink } from "apollo-upload-client";
 import { setContext } from "@apollo/client/link/context";
 
 const httpLink = createUploadLink({
-  uri: "http://localhost:5001/graphql",
+  uri: "https://memories-app-mern-graphql-backend.onrender.com/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -42,14 +42,11 @@ const client = new ApolloClient({
 
 const store = configureStore(window.__PRELOADED_STATE__);
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-<ApolloProvider client={client}>
-  <Provider store={store}>
-    <App />
+  <ApolloProvider client={client}>
+    <Provider store={store}>
+      <App />
     </Provider>
- </ApolloProvider>
+  </ApolloProvider>
 );
-
-
