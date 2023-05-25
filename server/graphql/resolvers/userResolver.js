@@ -43,12 +43,13 @@ const userResolvers = {
         });
 
         let utcDate = getUtcDate();
-
         let { delivered } = await sendEmail(
           email,
           config.email.signupSubject,
           config.email.template.emailSignupOtp(otpNumber)
         );
+
+        console.log("mail::::", delivered);
 
         // console.log("info::", info);
         // console.log("delivered", delivered);
